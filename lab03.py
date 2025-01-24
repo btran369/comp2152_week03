@@ -1,2 +1,2 @@
 # lab 3 coding questions
-print ("Hi")
+diceOptions = list(range(1,7))
