@@ -43,6 +43,6 @@ for i in range(1,21, 2):
         print("It's a tie")
         tieCount += 1
 print(f"Hero wins {heroWinCount} times\n")
-print(f"Monster wins {monsWeapon} times\n")
+print(f"Monster wins {monsWinCount} times\n")
 print(f"Both tied {tieCount}\n")
 
