@@ -1,4 +1,5 @@
 # lab 3 coding questions
+import random
 # dice
 diceOptions = list(range(1,7))
 
@@ -9,8 +10,39 @@ print("Available Weapons: ", ", ".join(weapons))
 
 def getCombatStrength(prompt):
     while True:
-        value = input(prompt)
+        value = int(input(prompt))
         if 1 <= value <= 6:
             return value
         else:
             print("Invalid input, enter value from 1-6")
+
+heroCombatStrength = getCombatStrength("Please enter number between 1-6 for Player: ")
+monsCombatStrength = getCombatStrength("Please enter number between 1-6 for Monster: ")
+
+heroWinCount = monsWinCount = tieCount = 0
+
+for i in range(1,21, 2):
+    heroRoll = random.choice(diceOptions)
+    monsRoll = random.choice(diceOptions)
+
+    heroWeapon = weapons[heroRoll - 1]
+    monsWeapon = weapons[monsRoll - 1]
+
+    heroTotalStrength = heroRoll + heroCombatStrength
+    monsTotalStrength = monsRoll + monsCombatStrength
+
+    print(f"Hero rolled {heroRoll}, selected {heroWeapon}, total strength: {heroTotalStrength}\n")
+    print(f"Monster rolled {monsRoll}, selected {monsWeapon}, total strength: {monsTotalStrength}\n")
+    if heroTotalStrength > monsTotalStrength:
+        print("Hero wins!")
+        heroWinCount += 1
+    elif heroTotalStrength < monsTotalStrength:
+        print("Monster wins!")
+        monsWinCount += 1
+    else:
+        print("It's a tie")
+        tieCount += 1
+print(f"Hero wins {heroWinCount} times\n")
+print(f"Monster wins {monsWeapon} times\n")
+print(f"Both tied {tieCount}\n")
+
