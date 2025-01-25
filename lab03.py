@@ -30,9 +30,9 @@ for i in range(1,21, 2):
 
     heroTotalStrength = heroRoll + heroCombatStrength
     monsTotalStrength = monsRoll + monsCombatStrength
-
-    print(f"Hero rolled {heroRoll}, selected {heroWeapon}, total strength: {heroTotalStrength}\n")
-    print(f"Monster rolled {monsRoll}, selected {monsWeapon}, total strength: {monsTotalStrength}\n")
+    print(f"\n\nRound {i}:")
+    print(f"Hero rolled {heroRoll}, selected {heroWeapon}, total strength: {heroTotalStrength}")
+    print(f"Monster rolled {monsRoll}, selected {monsWeapon}, total strength: {monsTotalStrength}")
     if heroTotalStrength > monsTotalStrength:
         print("Hero wins!")
         heroWinCount += 1
@@ -42,7 +42,8 @@ for i in range(1,21, 2):
     else:
         print("It's a tie")
         tieCount += 1
-print(f"Hero wins {heroWinCount} times\n")
-print(f"Monster wins {monsWinCount} times\n")
-print(f"Both tied {tieCount}\n")
+print("\nBattle truce at round 11")
+print(f"Hero wins {heroWinCount} times")
+print(f"Monster wins {monsWinCount} times")
+print(f"Both tied {tieCount}")
 
